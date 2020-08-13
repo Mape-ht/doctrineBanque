@@ -5,13 +5,26 @@
 Class ClientMoralDB{
 
 
+    private $db;
+
+    public function __construct()
+    {
+        $this->db = connexion();
+    }
+
     public function addClientMoral($clientmo){
 
 
-        $db = connexion();
-        $db->persist($clientmo);
-        $db->flush();
+        $this->db->persist($clientmo);
+        $this->db->flush();
         return $clientmo->getId();
+    }
+
+
+    public function getClientMoral($id){
+        
+        $db = connexion();
+        return $db->getRepository('ClientMoral')->find($id);
     }
 
 

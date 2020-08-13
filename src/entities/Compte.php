@@ -43,9 +43,9 @@ class Compte
 
     public function __construct()
     {
-        $this->typefrais = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->clientmo = new ArrayCollection();
-        $this->clientPhy = new ArrayCollection();
+        // $this->typefrais = new \Doctrine\Common\Collections\ArrayCollection();
+        // $this->clientmo = new ArrayCollection();
+        // $this->clientPhy = new ArrayCollection();
     }
 
     
