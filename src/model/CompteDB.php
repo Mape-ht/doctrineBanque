@@ -1,4 +1,6 @@
 <?php
+namespace src\model;
+
 
 Class CompteDB{
 

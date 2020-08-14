@@ -1,5 +1,5 @@
 <?php
-
+namespace src\model;
 
 
 Class ClientMoralDB{

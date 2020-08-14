@@ -1,5 +1,8 @@
 <?php
 
+use src\model\ClientPhysiqueDB;
+
+
 class ClientPhysiqueController{
 
 

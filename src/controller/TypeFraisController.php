@@ -1,4 +1,9 @@
 <?php
+namespace src\controller;
+
+
+use src\model\TypeFraisDB;
+use src\entities\TypeFrais;
 
 class TypeFraisController{
 
