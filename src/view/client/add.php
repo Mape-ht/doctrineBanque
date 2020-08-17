@@ -21,14 +21,14 @@
     <main>
         <aside>
             <ul class="main-nav">
-                <li><a href="client.php">Creation Client</a></li>
-                <li><a href="../../view/compte/compte.php">Creation Compte</a></li>
+                <li><a href="http://localhost/mesprojets/php/banqueORMMvc/ClientMoral">Creation Client</a></li>
+                <li><a href="http://localhost/mesprojets/php/banqueORMMvc/Compte">Creation Compte</a></li>
                 <li><a href="#">Transaction</a></li>
             </ul>
         </aside>
         <!--client physique séparé de client moral-->
         <section class="Client">
-            <form method="POST" action="ClientC">
+            <form method="POST" action="http://localhost/mesprojets/php/banqueORMMvc/ClientMoral/addClient">
                 <div>
                     <label for="cltp">Type Client</label>
                     <select name="cltp" id="cltp" onchange="showForm()">
@@ -48,6 +48,8 @@
                         <input type="text" id="nomsEmployeur" name="nomsEmployeur" placeholder="Noms de l'Employeur" /> <br><br />
                         <label for="adresseEmploi">Adresse de l'employeur</label>
                         <input type="text" id="adresseEmploi" name="adresseEmploi" placeholder="Adresse de l'Employeur" /><br />
+                        <label for="telephoneMo">Telephone </label>
+                        <input type="text" id="telephoneMo" name="telephoneMo" placeholder="Telephone de l'Employeur" /><br />
                         <label for="numIdEmployeur">NINEA</label>
                         <input type="text" id="numIdEmployeur" name="numIdEmployeur" placeholder="Numero ident Employeur" /><br><br />
                     </fieldset>

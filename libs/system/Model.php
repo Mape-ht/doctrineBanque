@@ -1,5 +1,6 @@
 <?php
 namespace libs\system;
+// require_once "../../bootstrap.php";
 
 class Model{
 

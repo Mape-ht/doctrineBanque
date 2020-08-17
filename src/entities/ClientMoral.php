@@ -27,6 +27,8 @@ class ClientMoral
      * @ORM\OneToMany(targetEntity="Compte", mappedBy="clientmo")
      */
     private $comptes;
+
+    private$typeclt;
     
 
 
@@ -102,6 +104,16 @@ class ClientMoral
     public function setComptes($comptes){
 
         $this->comptes = $comptes;
+    }
+
+
+    public function getTypeclt(){
+
+        return $this->typeclt;
+    }
+    public function setTypeclt($typeclt){
+
+        $this->typeclt = $typeclt;
     }
 
        

@@ -1,5 +1,7 @@
 <?php
 namespace src\model;
+use libs\system\Model;
+require_once "./bootstrap.php";
 
 
 Class ClientPhysiqueDB{
@@ -23,8 +25,11 @@ Class ClientPhysiqueDB{
 
     public function getClientPhysique($id){
         
-        $db = connexion();
-        return $db->getRepository('ClientPhysique')->find($id);
+        return $this->db->getRepository('ClientPhysique')->find($id);
+    }
+    public function getClientMoral($id){
+        
+        return $this->db->getRepository('ClientMoral')->find($id);
     }
     
 }

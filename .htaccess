@@ -1,7 +1,17 @@
 RewriteEngine On
 
-#RewriteCond %{REQUEST_FILENAME} !-f
+
 
 RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-l
 
-RewriteRule ^(.+)$ index.php?url=$1 [QSA,L] 
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+
+#RewriteRule ^(.+)$ index.php
+#RewriteRule ^client$ src/view/client/client.php
+#RewriteRule ^compte$ src/view/compte/compte.php
+
+
+#RewriteRule ClientC$ src/controller/ClientMoralController.php
+#RewriteRule compteC$ src/controller/CompteController.php

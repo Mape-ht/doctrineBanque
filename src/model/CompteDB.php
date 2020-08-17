@@ -1,5 +1,6 @@
 <?php
 namespace src\model;
+require_once "./bootstrap.php";
 
 
 Class CompteDB{

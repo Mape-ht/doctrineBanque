@@ -27,8 +27,8 @@ class ClientPhysique
     /** @ORM\Column(type="string") **/
     private $salaire;
     /**
-     * One ClientPhysique has One ClientMoral.
-     * @ORM\OneToOne(targetEntity="ClientMoral")
+     * Many ClientPhysique has One ClientMoral.
+     * @ORM\ManyToOne(targetEntity="ClientMoral")
      * @ORM\JoinColumn(name="clientMoral_id", referencedColumnName="id")
      */
     private $clientMoral;
@@ -39,6 +39,8 @@ class ClientPhysique
      * @ORM\OneToMany(targetEntity="Compte", mappedBy="clientPhy")
      */
     private $comptes;
+    
+    private$typeclt;
 
 
     public function __construct()
@@ -153,6 +155,16 @@ class ClientPhysique
     public function setComptes($comptes){
 
         $this->comptes = $comptes;
+    }
+
+
+    public function getTypeclt(){
+
+        return $this->typeclt;
+    }
+    public function setTypeclt($typeclt){
+
+        $this->typeclt = $typeclt;
     }
 
     

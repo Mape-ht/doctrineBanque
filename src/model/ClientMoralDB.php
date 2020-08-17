@@ -1,5 +1,7 @@
 <?php
 namespace src\model;
+use libs\system\Model;
+require_once "./bootstrap.php";
 
 
 Class ClientMoralDB{

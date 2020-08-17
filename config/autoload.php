@@ -22,15 +22,15 @@ class Autoloader{
         }
 
         //namespace
-        var_dump($class);
+        //var_dump($class);
         // die;
-        // if (file_exists("src/controller/".str_replace("\\", "/",$class.".php"))){
+        if (file_exists("src/controller/".str_replace("\\", "/",$class.".php"))){
 
-        //     require_once "src/controller/".str_replace("\\", "/",$class.".php");
-        // }else {
+          require_once "src/controller/".str_replace("\\", "/",$class.".php");
+     }else {
 
         // die("merci d'utiliser le mot clé USE suivi de ".$class);
-        // }
+         }
 
     }
 
