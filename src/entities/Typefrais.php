@@ -15,7 +15,12 @@ class TypeFrais
     private $frais;
     /** @ORM\Column(type="integer") **/
     private $montant;
-   
+   /**
+     * Many typecomptes has One Compte.
+     * @ORM\ManyToOne(targetEntity="Compte")
+     * @ORM\JoinColumn(name="typecompte_id", referencedColumnName="id")
+     */
+    private $compte;
 
 
     public function __construct()
@@ -50,6 +55,16 @@ class TypeFrais
     public function setMontant($montant){
 
         $this->montant = $montant;
+    }
+
+
+    public function getCompte(){
+
+        return $this->compte;
+    }
+    public function setCompte($compte){
+
+        $this->compte = $compte;
     }
 
     

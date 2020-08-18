@@ -1,40 +1,70 @@
 <?php
 
 use src\model\CompteDB;
+use src\model\TypeFraisDB;
+use src\model\TypecompteDB;
+use src\model\ClientMoralDB;
 use src\model\ClientPhysiqueDB;
+use libs\system\Controller;
+use libs\system\Model;
+use libs\system\View;
 
 
-class CompteController{
+class CompteController extends Controller{
 
 
-    public function addCompteController(){
+    public function index(){
 
-        $compte = new Compte();
-        $compte->setNumerocompte("111111");
-        $compte->setClerib("11");
-        $compte->setDatecrea("2020-08-12");
-        $compte->setSolde("100000");
+        return $this->view->load("compte/add");
+    }
 
-        $comptedb = new CompteDB();
+    public function addCompte(){
 
-        $clientDb = new ClientPhysiqueDB();
+        extract($_POST);
+        if (isset($_POST) && empty($_POST) == false){
 
-        // var_dump($comptedb->getClientPhysique(1)->getId());
-        // die;
-        $compte->setClientPhy($comptedb->getClientPhysique(1));
+            $compte = new Compte();
+            $comptedb = new CompteDB();
+            $typefraisdb = new TypeFraisDB();
+            $clientmor = new ClientMoralDB();
+            $cliphy =new ClientPhysiqueDB();
+            $typecompt = new TypecompteDB();
 
-        $ok=$comptedb->addCompte($compte);
+            $compte->setNumerocompte($_POST["numCompte"]); //récupérer les $_post du view
+            $compte->setClerib($_POST["cle"]);
+            $compte->setTypefraiss($typefraisdb->getTypeFrais($_POST["typesfrais"]));
+            $compte->setDatecrea($_POST["dateOuv"]);
+            $compte->setClientmo($clientmor->getClientMoral($_POST["employeur"]));
+            $compte->setClientPhy($cliphy->getClientPhysique($_POST["nomsClt"]));
+            $compte->setTypecomptes($typecompt->getTypecompte($_POST["typeCompte"]));
+            
+            
+            $ok=$comptedb->addCompte($compte);
 
-        if ($ok !=null){
+            if ($ok !=null){
 
-            echo "compte créé!";
+                echo "compte créé!";
 
-        }else{
+            }else{
 
-            echo "erreur!!!";
+                echo "erreur!!!";
+            }
+
+
         }
+
+        
         
     }
+
+    // $compte = new Compte();
+    // $compte->setNumerocompte("111111");
+    // $compte->setClerib("11");
+    // $compte->setDatecrea("2020-08-12");
+    // $compte->setSolde("100000");
+
+
+
 }
 
 ?>

@@ -27,10 +27,7 @@ Class ClientPhysiqueDB{
         
         return $this->db->getRepository('ClientPhysique')->find($id);
     }
-    public function getClientMoral($id){
-        
-        return $this->db->getRepository('ClientMoral')->find($id);
-    }
+    
     
 }
 

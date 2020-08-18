@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../../public/css/style.css" />
+    <link rel="stylesheet" href="public/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet" />
     <title>Creation Client</title>
     <meta name="description" content="Interface client Banque du Peuple" />
@@ -20,13 +20,13 @@
     <main>
         <aside>
             <ul class="main-nav">
-                <li><a href="./../client/client.php">Creation Client</a></li>
-                <li><a href="compte.php">Creation Compte</a></li>
+                <li><a href="http://localhost/mesprojets/php/banqueORMMvc/ClientMoral">Creation Client</a></li>
+                <li><a href="http://localhost/mesprojets/php/banqueORMMvc/Compte">Creation Compte</a></li>
                 <li><a href="#">Transaction</a></li>
             </ul>
         </aside>
         <section class="Compte">
-            <form id="creacompteForm" method="POST" action="http://localhost/mesprojets/php/banquePOONamespace/src/controller/CompteController.php" onchange="showCompteEpargne()">
+            <form id="creacompteForm" method="POST" action="http://localhost/mesprojets/php/banqueORMMvc/Compte/addCompte" onchange="showCompteEpargne()">
          
                 <fieldset>
                     <legend>Creation Compte</legend>
@@ -57,16 +57,7 @@
                             <option value="2">Agio</option>
                             <option value="3">Frais Blocage</option>
                         </select><br><br />
-                    <!--<input type="text" name="typesfrais" id="typesfrais" /><br></br>
                     
-                    <label for="remun">Remuneration</label>
-                    <input type="text" name="remun" id="remun" /><br></br>
-                    
-                    <label for="agios">Agios</label>
-                    <input type="text" name="agios" id="agios" /><br></br>-->
-
-
-
                     <label for="dateOuv">Date d'ouverture du compte</label>
                     <input id="dateOuv" type="date" name="dateOuv" /><br />
                 </fieldset>
@@ -77,7 +68,7 @@
             </form>
         </section>
     </main>
-    <script src="../../../public/js/compte.js">
+    <script src="public/compte.js">
     </script>
 
     <body>

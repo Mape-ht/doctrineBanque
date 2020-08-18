@@ -16,37 +16,35 @@ class Compte
     /** @ORM\Column(type="string") **/
     private $clerib;
     /**
-     * Many Compte have Many Typefrais.
-     * @ORM\ManyToMany(targetEntity="TypeFrais")
-     * @ORM\JoinTable(name="comptes_typefrais",
-     *      joinColumns={@ORM\JoinColumn(name="compte_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="typeFrais_id", referencedColumnName="id", unique=true)}
-     *      )
+     * One compte has many typefraiss. This is the inverse side.
+     * @ORM\OneToMany(targetEntity="Typefrais", mappedBy="compte")
      */
-    private $typefrais;
+    private $typefraiss;
+    /** @ORM\Column(type="decimal") **/
+    private $depotinitial;
     /** @ORM\Column(type="string") **/
     private $datecrea;
-    /** @ORM\Column(type="integer") **/
-    private $solde;
-     /**
-     * Many comptes have one clientmo. This is the owning side.
+
+    /**
      * @ORM\ManyToOne(targetEntity="ClientMoral", inversedBy="comptes")
-     * @ORM\JoinColumn(name="clientmo_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="clientMo_id", referencedColumnName="id")
      */
     private $clientmo;
-     /**
-     * Many comptes have one clientPhy. This is the owning side.
+    /**
      * @ORM\ManyToOne(targetEntity="ClientPhysique", inversedBy="comptes")
      * @ORM\JoinColumn(name="clientPhy_id", referencedColumnName="id")
      */
     private $clientPhy;
+    /**
+     * @ORM\ManyToOne(targetEntity="Typecompte", inversedBy="comptes")
+     * @ORM\JoinColumn(name="typeCompte_id", referencedColumnName="id")
+     */
+    private $typecompte;
 
 
     public function __construct()
     {
-        $this->typefrais = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->clientmo = new ArrayCollection();
-        $this->clientPhy = new ArrayCollection();
+        $this->typefraiss = new ArrayCollection();
     }
 
     
@@ -80,13 +78,23 @@ class Compte
     }
 
 
-    public function getTypefrais(){
+    public function getTypefraiss(){
 
-        return $this->typefrais;
+        return $this->typefraiss;
     }
-    public function setTypefrais($typefrais){
+    public function setTypefraiss($typefraiss){
 
-        $this->typefrais = $typefrais;
+        $this->typefraiss = $typefraiss;
+    }
+
+
+    public function getDepotinitial(){
+
+        return $this->depotinitial;
+    }
+    public function setDepotinitial($depotinitial){
+
+        $this->depotinitial = $depotinitial;
     }
 
 
@@ -97,16 +105,6 @@ class Compte
     public function setDatecrea($datecrea){
 
         $this->datecrea = $datecrea;
-    }
-
-
-    public function getSolde(){
-
-        return $this->solde;
-    }
-    public function setSolde($solde){
-
-        $this->solde = $solde;
     }
 
 
@@ -128,6 +126,16 @@ class Compte
     public function setClientPhy($clientPhy){
 
         $this->clientPhy = $clientPhy;
+    }
+
+
+    public function getTypecompte(){
+
+        return $this->typecompte;
+    }
+    public function setTypecompte($typecomptes){
+
+        $this->typecompte = $typecomptes;
     }
 
 

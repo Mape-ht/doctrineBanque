@@ -87,7 +87,7 @@ class ClientMoralController extends Controller
                     }
                 }
             } else {
-                return $this->view->load("client/ClientC");
+                return $this->view->load("client/add");
             }
         }
     }

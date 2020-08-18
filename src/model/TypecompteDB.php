@@ -3,7 +3,7 @@ namespace src\model;
 use libs\system\Model;
 require_once "./bootstrap.php";
 
-class TypeFraisDB{
+class TypecompteDB{
 
 
     private $db;
@@ -14,22 +14,21 @@ class TypeFraisDB{
     }
 
 
-    public function addTypeFrais($typefrais){
+    public function addTypecompte($typecompte){
 
 
-        $this->db->persist($typefrais);
+        $this->db->persist($typecompte);
         $this->db->flush();
-        return $typefrais->getId();
+        return $typecompte->getId();
     }
 
 
-    public function getTypeFrais($id){
+    public function getTypecompte($id){
 
 
         $db = connexion();
-        return $db->getRepository('TypeFrais')->find($id);
+        return $db->getRepository('Typecompte')->find($id);
     }
-
 }
 
 ?>

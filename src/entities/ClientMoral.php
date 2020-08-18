@@ -23,11 +23,11 @@ class ClientMoral
     /** @ORM\Column(type="string") **/
     private $ninea;
     /**
-     * One clientmo has many comptes. This is the inverse side.
-     * @ORM\OneToMany(targetEntity="Compte", mappedBy="clientmo")
+     * Many clientmorals have one compte. This is the owning side.
+     * @ORM\OneToMany(targetEntity="Compte",mappedBy="clientMo")
      */
-    private $comptes;
-
+    private $compte;
+    /** @ORM\Column(type="string") **/
     private$typeclt;
     
 
@@ -97,13 +97,13 @@ class ClientMoral
     }
 
 
-    public function getComptes(){
+    public function getCompte(){
 
-        return $this->comptes;
+        return $this->compte;
     }
-    public function setComptes($comptes){
+    public function setCompte($compte){
 
-        $this->comptes = $comptes;
+        $this->compte = $compte;
     }
 
 

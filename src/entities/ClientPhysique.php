@@ -35,11 +35,11 @@ class ClientPhysique
     /** @ORM\Column(type="string") **/
     private $cin;
     /**
-     * One clientPhy has many comptes. This is the inverse side.
+     * Many ClientPhysique have one compte. This is the owning side.
      * @ORM\OneToMany(targetEntity="Compte", mappedBy="clientPhy")
      */
     private $comptes;
-    
+    /** @ORM\Column(type="string") **/
     private$typeclt;
 
 
@@ -152,9 +152,9 @@ class ClientPhysique
 
         return $this->comptes;
     }
-    public function setComptes($comptes){
+    public function setComptes($compte){
 
-        $this->comptes = $comptes;
+        $this->comptes = $compte;
     }
 
 
