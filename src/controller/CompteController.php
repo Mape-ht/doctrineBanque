@@ -32,8 +32,9 @@ class CompteController extends Controller{
 
             $compte->setNumerocompte($_POST["numCompte"]); //récupérer les $_post du view
             $compte->setClerib($_POST["cle"]);
-            $compte->setTypefraiss(["typesfrais"]);
+            $compte->setTypefrais($_POST["typesfrais"]);
             $compte->setDatecrea($_POST["dateOuv"]);
+            $compte->setDepotinitial($_POST["initial"]);
             // $compte->setClientmo($clientmor->getClientMoral($_POST["employeur"]));
             // $compte->setClientPhy($cliphy->getClientPhysique($_POST["nomsClt"]));
             $compte->setTypecompte($_POST["typeCompte"]);
