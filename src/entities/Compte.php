@@ -1,7 +1,7 @@
 <?php
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
+
 
 /** 
  * @ORM\Entity @ORM\Table(name="compte")
@@ -15,11 +15,8 @@ class Compte
     private $numerocompte;
     /** @ORM\Column(type="string") **/
     private $clerib;
-    /**
-     * One compte has many typefraiss. This is the inverse side.
-     * @ORM\OneToMany(targetEntity="Typefrais", mappedBy="compte")
-     */
-    private $typefraiss;
+    /** @ORM\Column(type="string") **/
+    private $typefrais;
     /** @ORM\Column(type="decimal") **/
     private $depotinitial;
     /** @ORM\Column(type="string") **/
@@ -35,16 +32,13 @@ class Compte
      * @ORM\JoinColumn(name="clientPhy_id", referencedColumnName="id")
      */
     private $clientPhy;
-    /**
-     * @ORM\ManyToOne(targetEntity="Typecompte", inversedBy="comptes")
-     * @ORM\JoinColumn(name="typeCompte_id", referencedColumnName="id")
-     */
+    /** @ORM\Column(type="string") **/
     private $typecompte;
 
 
     public function __construct()
     {
-        $this->typefraiss = new ArrayCollection();
+       
     }
 
     
@@ -78,13 +72,13 @@ class Compte
     }
 
 
-    public function getTypefraiss(){
+    public function getTypefrais(){
 
-        return $this->typefraiss;
+        return $this->typefrais;
     }
-    public function setTypefraiss($typefraiss){
+    public function setTypefrais($typefrais){
 
-        $this->typefraiss = $typefraiss;
+        $this->typefrais = $typefrais;
     }
 
 
@@ -133,9 +127,9 @@ class Compte
 
         return $this->typecompte;
     }
-    public function setTypecompte($typecomptes){
+    public function setTypecompte($typecompte){
 
-        $this->typecompte = $typecomptes;
+        $this->typecompte = $typecompte;
     }
 
 

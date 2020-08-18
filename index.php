@@ -23,6 +23,7 @@ require_once 'src/model/ClientMoralDB.php';
 require_once 'src/model/ClientPhysiqueDB.php';
 require_once 'src/model/CompteDB.php';
 require_once 'src/model/TypeFraisDB.php';
+require_once 'src/model/TypecompteDB.php';
 // require_once 'src/controller/ClientMoralController.php';
 // require_once 'src/controller/ClientPhysiqueController.php';
 // require_once 'src/controller/CompteController.php';

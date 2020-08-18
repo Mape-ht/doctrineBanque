@@ -32,11 +32,11 @@ class CompteController extends Controller{
 
             $compte->setNumerocompte($_POST["numCompte"]); //récupérer les $_post du view
             $compte->setClerib($_POST["cle"]);
-            $compte->setTypefraiss($typefraisdb->getTypeFrais($_POST["typesfrais"]));
+            $compte->setTypefraiss(["typesfrais"]);
             $compte->setDatecrea($_POST["dateOuv"]);
-            $compte->setClientmo($clientmor->getClientMoral($_POST["employeur"]));
-            $compte->setClientPhy($cliphy->getClientPhysique($_POST["nomsClt"]));
-            $compte->setTypecomptes($typecompt->getTypecompte($_POST["typeCompte"]));
+            // $compte->setClientmo($clientmor->getClientMoral($_POST["employeur"]));
+            // $compte->setClientPhy($cliphy->getClientPhysique($_POST["nomsClt"]));
+            $compte->setTypecompte($_POST["typeCompte"]);
             
             
             $ok=$comptedb->addCompte($compte);
