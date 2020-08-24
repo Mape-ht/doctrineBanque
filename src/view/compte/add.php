@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="public/style.css" />
+    <link rel="stylesheet" href="http://localhost/mesprojets/php/banqueORMMvc/public/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet" />
     <title>Creation Client</title>
     <meta name="description" content="Interface client Banque du Peuple" />
@@ -68,7 +68,7 @@
             </form>
         </section>
     </main>
-    <script src="public/compte.js">
+    <script src="http://localhost/mesprojets/php/banqueORMMvc/public/compte.js">
     </script>
 
     <body>

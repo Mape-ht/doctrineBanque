@@ -87,10 +87,13 @@ class ClientMoralController extends Controller
 
                     }
                 }
-            } else {
-                return $this->view->load("client/add");
             }
+            // else {
+            //     return $this->view->load("client/add");
+            // }
         }
+        return $this->view->load("client/add");
+
     }
     // $clientMoral->setAdresse("Mamelles");
     // $clientMoral->setGerant("Moustapha");

@@ -54,9 +54,10 @@ class CompteController extends Controller{
 
         }
 
-        
+        return $this->view->load("compte/add");
         
     }
+
 
     // $compte = new Compte();
     // $compte->setNumerocompte("111111");
